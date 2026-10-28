@@ -6,7 +6,22 @@
   home.packages = with pkgs; [
     ripgrep
     fd
+    gcc
+    gnumake
+    unstable.tree-sitter   # CLI that nvim-treesitter (main) uses to build parsers
+  vscode-langservers-extracted   # html, css, json, eslint servers
+  lua-language-server
+    typescript-language-server   # ts_ls
+  typescript                   # tsserver, which ts_ls drives under the hood
+  bash-language-server         # bashls
+  shellcheck                   # bashls uses it for linting, if present
+  shfmt
   ];
+
+    programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
   programs.bash = {
     enable = true;

@@ -17,4 +17,5 @@ return {
 	"lervag/vimtex",
 	ft = "tex",
 	config = config,
+    enabled = false
 }

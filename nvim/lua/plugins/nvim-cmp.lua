@@ -8,7 +8,6 @@ local function config()
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
-			{ name = "cmp-tw2css" },
             { name = "buffer" },
 			{ name = "path" },
 		},

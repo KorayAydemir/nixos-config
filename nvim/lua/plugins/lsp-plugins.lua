@@ -57,26 +57,6 @@ local function nvim_lspconfig()
 	-- 		enable = false,
 	-- 	},
 	-- })
-
-	require("sonarlint").setup({
-		server = {
-             cmd = {
-         "sonarlint-language-server",
-         -- Ensure that sonarlint-language-server uses stdio channel
-         "-stdio",
-         "-analyzers",
-         -- paths to the analyzers you need, using those for python and java in this example
-         vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
-         vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
-         vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
-      },
-
-		},
-		filetypes = {
-			"javascript",
-			"scss",
-		},
-	})
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -106,18 +86,6 @@ return {
 		config = nvim_lspconfig,
 		dependencies = { "lewis6991/gitsigns.nvim", "https://gitlab.com/schrieveslaach/sonarlint.nvim" },
 	},
-	{ "williamboman/mason.nvim", config = true, cmd = "Mason" },
-	{
-		"williamboman/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {
-			-- rust-analyzer should be installed via rustup!
-			ensure_installed = { "ts_ls", "lua_ls", "bashls", "tailwindcss" },
-		},
-		dependencies = { "williamboman/mason.nvim" },
-	},
-
 	{ "j-hui/fidget.nvim", event = "VeryLazy", opts = {} },
 	{ "folke/lazydev.nvim", ft = "lua", opts = {} },
-	{ "mfussenegger/nvim-jdtls", lazy = true },
 }

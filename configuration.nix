@@ -11,6 +11,8 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];  # `nix develop`, `use flake` etc. outside nixos-rebuild
+
   programs.direnv = { enable = true; nix-direnv.enable = true; };  # per-project shells
   programs.nix-ld.enable = true;      # needed for the VS Code Remote-WSL server and other prebuilt binaries
   programs.ssh.startAgent = true;

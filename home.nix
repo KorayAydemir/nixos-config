@@ -18,6 +18,8 @@
   shfmt
       unstable.claude-code
       wl-clipboard
+      fnm                      # Node version manager; projects pin Node in .nvmrc
+      unstable.pnpm            # launcher only; projects pin pnpm via package.json "packageManager"
 
   ];
 
@@ -47,7 +49,7 @@
   programs.git = {
     enable = true;
     userName = "Koray Aydemir";
-    userEmail = "your-github-email@example.com";
+    userEmail = "korayaydemir99@gmail.com";
   };
 
     xdg.configFile."nvim".source =

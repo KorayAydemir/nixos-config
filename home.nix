@@ -16,6 +16,9 @@
   bash-language-server         # bashls
   shellcheck                   # bashls uses it for linting, if present
   shfmt
+      unstable.claude-code
+      wl-clipboard
+
   ];
 
     programs.fzf = {

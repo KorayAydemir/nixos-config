@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }: {
+{ config, pkgs, unstable, ... }: {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "26.05";   # like system.stateVersion: set once, never change
@@ -27,6 +27,9 @@
     userName = "Koray Aydemir";
     userEmail = "your-github-email@example.com";
   };
+
+    xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/nvim";
 
   programs.home-manager.enable = true;
 }

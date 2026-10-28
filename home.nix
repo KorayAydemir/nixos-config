@@ -38,6 +38,10 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
+    initExtra = ''
+      __wezterm_osc7() { printf '\e]7;file://%s%s\e\\' "$HOSTNAME" "$PWD"; }
+      PROMPT_COMMAND="__wezterm_osc7''${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+    '';
   };
 
   programs.git = {
@@ -48,6 +52,7 @@
 
     xdg.configFile."nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/nvim";
+
 
   programs.home-manager.enable = true;
 }

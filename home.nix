@@ -19,7 +19,8 @@
       unstable.claude-code
       wl-clipboard
       fnm                      # Node version manager; projects pin Node in .nvmrc
-      unstable.pnpm            # launcher only; projects pin pnpm via package.json "packageManager"
+      unstable.pnpm            # launcher only; projects pin pnpm via package.json "devEngines"
+      unstable.prettierd       # conform fallback formatter; uses a project's own prettier when present
 
   ];
 

@@ -16,6 +16,10 @@ config.window_padding = {
 	right = 0,
 }
 
+config.adjust_window_size_when_changing_font_size = false
+config.initial_rows = 50
+config.initial_cols = 160
+
 config.leader = { key = 'Space', mods = 'ALT', timeout_milliseconds = 1000 }
 local SUPER = 'ALT'
 

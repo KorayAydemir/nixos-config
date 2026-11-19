@@ -51,6 +51,7 @@
     enable = true;
     settings.user.name = "Koray Aydemir";
     settings.user.email = "korayaydemir99@gmail.com";
+    settings.pull.ff = "only";   # fast-forward only
   };
 
     xdg.configFile."nvim".source =

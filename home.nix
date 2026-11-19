@@ -49,12 +49,16 @@
 
   programs.git = {
     enable = true;
-    userName = "Koray Aydemir";
-    userEmail = "korayaydemir99@gmail.com";
+    settings.user.name = "Koray Aydemir";
+    settings.user.email = "korayaydemir99@gmail.com";
   };
 
     xdg.configFile."nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/nvim";
+
+  # symlink (not store copy) so Claude Code can still write to it, e.g. via /config
+  home.file.".claude/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/claude/settings.json";
 
 
   programs.home-manager.enable = true;
